@@ -14,7 +14,7 @@ bool naotrezke(double x1, double y1, double qx, double qy, double x2, double y2)
            (qy >= std::min(y1,y2) && qy <= std::max(y1,y2));
 }
 
-bool perecex(double x1,double y1,double x2,double y2,double x3,double y3,double x4,double y4) {
+bool intersection(double x1,double y1,double x2,double y2,double x3,double y3,double x4,double y4) {
     int o1 = rotate(x1,y1, x2,y2, x3,y3);
     int o2 = rotate(x1,y1, x2,y2, x4,y4);
     int o3 = rotate(x3,y3, x4,y4, x1,y1);
@@ -36,7 +36,7 @@ bool polygonsIntersect(double poly1[][2], int n1, double poly2[][2], int n2) {
         for (int j = 0; j < n2; ++j) {
             double x3 = poly2[j][0], y3 = poly2[j][1];
             double x4 = poly2[(j+1)%n2][0], y4 = poly2[(j+1)%n2][1];
-            if (perecex(x1,y1,x2,y2,x3,y3,x4,y4)) return true;
+            if (intersection(x1,y1,x2,y2,x3,y3,x4,y4)) return true;
         }
     }
     return false;

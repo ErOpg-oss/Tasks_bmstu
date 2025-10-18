@@ -12,7 +12,6 @@ int main() {
     int len1 = strlen(str1);
     int len2 = strlen(str2);
     
-    // Создаем двумерный массив dp
     int dp[100][100] = {0};
     int maxLen = 0;
     int endIndex = 0;

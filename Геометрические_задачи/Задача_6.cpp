@@ -13,7 +13,7 @@ bool naotrezke(int x1, int y1, int qx, int qy, int x2, int y2) {
     return ( (x1 <= qx && qx <= x2) || (x2 <= qx && qx <= x1) ) && ( (y1 <= qy && qy <= y2) || (y2 <= qy && qy <= y1) );
 }
 
-bool perecex(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4) {
+bool intersection(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4) {
     int o1 = rotate(x1,y1, x2,y2, x3,y3);
     int o2 = rotate(x1,y1, x2,y2, x4,y4);
     int o3 = rotate(x3,y3, x4,y4, x1,y1);
@@ -45,7 +45,7 @@ int main() {
     std::cout << "Точка D: ";
     std::cin >> x4 >> y4;
 
-    if (perecex(x1, y1, x2, y2, x3, y3, x4, y4)) {
+    if (intersection(x1, y1, x2, y2, x3, y3, x4, y4)) {
         std::cout << "Отрезки пересекаются.";
     } 
     else {
